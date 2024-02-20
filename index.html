@@ -5,23 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quotes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><a href="#">Random <span> Quotes </a></span></h1>
-            <div class="theme-container"> 
-                <label id="switch" class="switch">
-                    <input type="checkbox" onchange="toggleTheme()" id="slider">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </header>
-
-        <div class="about">
-            <p>Introducing <span>Quotes App</span>, your go-to destination for daily inspiration and motivation! Immerse yourself in a world of timeless wisdom and thought-provoking quotes, carefully curated to uplift your spirits and ignite your imagination.Start your day on a positive note, embrace the beauty of words.</p>
+    <header >
+        <a href="index.html"><h1>Random <span> Quotes</span></h1> </a>
+        <div class="theme-wrapper"> 
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
         </div>
+    </header>
+    
+    <div class="container">
+        <div class="about">
+            <p>Introducing <a href="#"><span>Quotes App</span></a>, your go-to destination for daily inspiration and motivation! Immerse yourself in a world of timeless wisdom and thought-provoking quotes, carefully curated to uplift your spirits and ignite your imagination.Start your day on a positive note, embrace the beauty of words.</p>
+        </div>
+
+        <div class="categories">
+            <h1>Categories</h1>
+            <p>Select the catergory you want to see the quotes about ....</p>
+            <div class="wrapper">
+                <div class="toggle_radio">
+                  <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
+                  <input type="radio" checked class="toggle_option" id="second_toggle" name="toggle_option">
+                  <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
+                  <label for="first_toggle"><p>First Button</p></label>
+                  <label for="second_toggle"><p>Second Button</p></label>
+                  <label for="third_toggle"><p>Third Button</p></label>
+                  <div class="toggle_option_slider">
+                </div>
+            </div>
     </div>
 
     <script src="main.js"></script>
