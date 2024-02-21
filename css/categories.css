@@ -10,8 +10,8 @@
 }
 
 .categories h1{
-    color: var(--color-primary);
-    font-size: 30px; */
+    color: var(--font-color);
+    font-size: 30px; 
 }
 .categories p{
     margin-top: 10px;
