@@ -1,0 +1,107 @@
+
+/* Catergories radio button */
+.categories {
+    color: var(--font-color);
+    transition: color, background var(--transition-duration); 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories h1{
+    color: var(--color-primary);
+    font-size: 30px; */
+}
+.categories p{
+    margin-top: 10px;
+    font-size: 17px;
+}
+:root {
+    --accent: #007ECC;
+    --accent-2: #EC2F4B;
+    --text: var(--font-color);
+    --text-hover: var(--accent);
+    --text-active: #FFFFFF;
+    --border-width: 0.125em;
+}
+.hidden-toggles {
+	position: relative;
+	border-radius: 999em;
+	overflow: hidden;
+    margin-top:16px;
+	height: 2.75em;
+	width: 20em;
+	display: flex;
+	flex-direction: row-reverse;
+	> * {
+		flex: 0 0 33.33%;
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		border: var(--border-width) solid var(--accent);
+		border-radius: 999em;
+		pointer-events: none;
+	}
+}
+
+.hidden-toggles__input {
+	display: none;
+
+	&:checked + .hidden-toggles__label {
+		background-color: var(--accent);
+		color: var(--text-active);
+
+		&:before {
+			opacity: 1;
+		}
+		
+		&:last-of-type {
+			background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+		}
+	}
+	
+	&:nth-of-type(1) + label { order: 4 }
+	&:nth-of-type(2) + label { order: 3 }
+	&:nth-of-type(3) + label { order: 2 }
+	&:nth-of-type(4) + label { order: 1 }
+	
+	&:nth-of-type(1):checked,
+	&:nth-of-type(2):checked {
+		~ label:last-of-type {
+			margin-right: -33.33%;
+		}
+	}
+}
+
+.hidden-toggles__label {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	position: relative;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+  color: var(--text);
+
+	&:hover {
+		color: var(--text-hover);
+	}
+
+	&:nth-of-type(2) {
+		border-left: var(--border-width) solid var(--accent);
+		border-right: var(--border-width) solid var(--accent);
+	}
+	
+	&:last-of-type {
+		border-left: var(--border-width) solid var(--accent);
+	}
+}

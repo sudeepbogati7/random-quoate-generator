@@ -16,15 +16,16 @@
     text-align: center;
     justify-content: space-between;
     align-items: start;
-    /* background-color: red; */
+    border-bottom: 1px solid #333;
+    /* background-color: red;    */
 }
 .quote-actions{
     /* background-color: blue; */
     height: 100%;
-    width: 120px;
-    margin: auto auto;;
-    text-align: center;
-    align-items: center;
+    width: 40%;
+    margin: auto -1px;;
+    text-align: end;
+    padding: 0 10px;
 }
 .quote-header h1{
     font-size: 35px;
@@ -34,8 +35,9 @@
 
 .quote-header i{
     cursor: pointer;
-    padding: 0 7px;
-    font-size: 19px;
+    /* padding: 0 10px; */
+    margin: auto 20px;
+    font-size: 20px;
     color: var(--font-color);
 }
 
@@ -84,24 +86,24 @@
 }
 
 
-/* hover effects */
+
 .action-icon {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  /* margin-right: 10px; */
 }
 
 .action-icon .copy-text,
 .action-icon .inc_font,
 .action-icon .dec_font {
   position: absolute;
-  top: -20px;
+  top: -60px;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   background-color: #333;
   color: #fff;
-  padding: 5px;
+  padding: 2px;
   border-radius: 5px;
   opacity: 0;
   transition: opacity 0.3s ease;
