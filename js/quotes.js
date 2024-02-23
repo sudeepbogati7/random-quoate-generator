@@ -1,21 +1,49 @@
-async function getQuotes() {
-    const url = 'https://juanroldan1989-moviequotes-v1.p.rapidapi.com/api/v1/quotes?actor=Al%20Pacino';
-    const options = {
-        method: 'GET',
-        headers: {
-            Authorization: 'Token token=yd8WzkWNEEzGtqMSgiZBrwtt',
-            'X-RapidAPI-Key': '788321e4bemsh539392ce40a9a84p1b73b7jsn448d3d49cf0b',
-            'X-RapidAPI-Host': 'juanroldan1989-moviequotes-v1.p.rapidapi.com'
-        }
-    };
-    
+const quoteText = document.querySelector('.quote');
+const previousBtn = document.querySelector(".previous");
+const nextBtn = document.querySelector(".next");
+const randBtn = document.querySelector('.random');
+const authorName = document.querySelector(".author .name");
+
+const url = 'https://api.quotable.io/random';
+const options = {method: 'GET'};
+
+// declare and initialze global variables
+let currentQuotesIndex = null;
+let quotes = [];
+
+async function getQuotes(url , options){
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-    } catch (error) {
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
         console.error(error);
     }
 }
 
-getQuotes();
+// fetch the quoets and display 
+async function getAndDisplay(index){
+    const quoteData = await getQuotes(url, options);
+    quotes[index] = quoteData;
+    displayQuote(index);
+    
+}
+function displayQuotes(index){
+    const quote = quotes[index];
+    quoteText.innerText = quote.content;
+    authorName.innerText = quote.author;
+}
+
+
+// random button suffles the quote
+randBtn.addEventListener("click", ()=>{
+    randBtn.innerText = "Loading quote...";
+    getQuotes(url, options).then(data => {
+        currentQuotesIndex = null;
+        quotes.push(data);
+        displayQuotes(quotes.length - 1);
+        randBtn.innerText= "random";
+    });
+});
+
