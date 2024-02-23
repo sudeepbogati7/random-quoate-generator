@@ -44,6 +44,7 @@ header{
     position: relative;
     padding: 10px 10px;
     margin: 0 30px;
+    overflow: hidden;
 }
 
 header h1 span,
@@ -182,3 +183,5 @@ p{
     align-items: center;
 }
 /* -----------------About end----------- */
+
+
