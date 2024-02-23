@@ -16,17 +16,21 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     border-bottom: 1px solid #333;
-    /* background-color: red;    */
+    height: 50px;
+    position: relative;   
+    z-index: 1;
+    /* background-color: red; */
 }
 .quote-actions{
     /* background-color: blue; */
-    height: 100%;
-    width: 40%;
-    margin: auto -1px;;
-    text-align: end;
     padding: 0 10px;
+    position: relative;
+    top: 70%;
+    height: 100%;
+    transform: translatey(-50%);
+    z-index: 1;
 }
 .quote-header h1{
     font-size: 35px;
@@ -36,12 +40,44 @@
 
 .quote-header i{
     cursor: pointer;
-    /* padding: 0 10px; */
     margin: auto 20px;
     font-size: 20px;
     color: var(--font-color);
 }
 
+.action-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    /* background-color: aquamarine; */
+}
+.action-icon i:active{
+    color: #4264a8;
+    user-select: none;
+}
+  
+.action-icon .copy-text,
+.action-icon .inc_font,
+.action-icon .dec_font {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+  #copy-icon:hover .copy-text,
+  #increase-font-icon:hover .inc_font,
+  #decrease-font-icon:hover .dec_font {
+    opacity: 1;
+}
+  
 
 
 
@@ -65,16 +101,16 @@
     display: flex;
     flex-direction:row;
     justify-content: space-between;
+    overflow: hidden;
 }
 .controller-buttons button{
     cursor: pointer;
     background: var(--color-secondary);
     transition: background var(--transition-duration);
 }
-.controller-buttons i {
-    margin: 0 5px;
+.controller-buttons button:active {
+    background: var(--color-primary);
 }
-
 
 /* font size controller */
 .fontsize-wrapper{
@@ -87,31 +123,3 @@
 }
 
 
-
-.action-icon {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.action-icon .copy-text,
-.action-icon .inc_font,
-.action-icon .dec_font {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 2px;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-#copy-icon:hover .copy-text,
-#increase-font-icon:hover .inc_font,
-#decrease-font-icon:hover .dec_font {
-  opacity: 1;
-}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +9,47 @@
     <link rel="stylesheet" href="css/quotes.css">
     <link rel="stylesheet" href="css/categories.css">
     <script src="https://kit.fontawesome.com/54a78b4a6f.js" crossorigin="anonymous"></script>
-    
+
 </head>
+
 <body>
-    <header >
-        <a href="index.html"><h1>Random <span> Quotes</span></h1> </a>
-        <div class="theme-wrapper"> 
+    <header>
+        <a href="index.html">
+            <h1>Random <span> Quotes</span></h1>
+        </a>
+        <div class="theme-wrapper">
             <label id="switch" class="switch">
                 <input type="checkbox" onchange="toggleTheme()" id="slider">
                 <span class="slider round"></span>
             </label>
         </div>
     </header>
-    
+
     <div class="container">
         <div class="about">
-            <p>Introducing <a href="#"><span>Quotes App</span></a>, your go-to destination for daily inspiration and motivation! Immerse yourself in a world of timeless wisdom and thought-provoking quotes, carefully curated to uplift your spirits and ignite your imagination.</p>
+            <p>Introducing <a href="#"><span>Quotes App</span></a>, your go-to destination for daily inspiration and
+                motivation! Immerse yourself in a world of timeless wisdom and thought-provoking quotes, carefully
+                curated to uplift your spirits and ignite your imagination.</p>
         </div>
 
         <div class="categories">
             <h1>Categories</h1>
             <p>Select the catergory you want to see the quotes about ....</p>
             <div class="hidden-toggles">
-				
-				<input name="coloration-level" type="radio" id="coloration-low" class="hidden-toggles__input">
-				<label for="coloration-low" class="hidden-toggles__label">Motivational</label>
-				
-				<input name="coloration-level" type="radio" id="coloration-medium" class="hidden-toggles__input" checked>
-				<label for="coloration-medium" class="hidden-toggles__label">Science</label>	
-				
-				<input name="coloration-level" type="radio" id="coloration-high" class="hidden-toggles__input">
-				<label for="coloration-high" class="hidden-toggles__label">Technology</label>
-				
-				<input name="coloration-level" type="radio" id="coloration-striking" class="hidden-toggles__input">
-				<label for="coloration-striking" class="hidden-toggles__label">Love</label>
-			</div>
+
+                <input name="coloration-level" type="radio" id="coloration-low" class="hidden-toggles__input">
+                <label for="coloration-low" class="hidden-toggles__label">Motivational</label>
+
+                <input name="coloration-level" type="radio" id="coloration-medium" class="hidden-toggles__input"
+                    checked>
+                <label for="coloration-medium" class="hidden-toggles__label">Science</label>
+
+                <input name="coloration-level" type="radio" id="coloration-high" class="hidden-toggles__input">
+                <label for="coloration-high" class="hidden-toggles__label">Technology</label>
+
+                <input name="coloration-level" type="radio" id="coloration-striking" class="hidden-toggles__input">
+                <label for="coloration-striking" class="hidden-toggles__label">Love</label>
+            </div>
         </div>
 
         <!-- Quotes -->
@@ -66,22 +73,22 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Actual quotes -->
                 <div class="content">
                     <i class="fas fa-quote-left"></i>
-                    <span class="quote">Expect nothing Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo fugit quos rerum autem corporis, minus dicta quam pariatur fuga! Ex sed excepturi natus facere? Quae beatae temporibus non itaque., you will not be disappointed. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, voluptas.</span>
+                    <span class="quote">Loading please wait ....</span>
                     <i class="fas fa-quote-right"></i>
                 </div>
                 <!-- author name -->
                 <div class="author">
-                    <p class="name">~Sudeep Bogati</p>
+                    <p class="name">~ Loading ....</p>
                 </div>
-            
+
                 <div class="controller-buttons">
-                    <a href="#"><button class="previous"><i class="fa-solid fa-arrow-left"></i>Previous</button></a>
-                    <a href="#"><button class="random">Random</button></a>
-                    <a href="#"><button class="next">Next<i class="fa-solid fa-arrow-right"></i></button></a>
+                    <button class="previous"> <<  Previous</button>
+                    <button class="random">Random</button>
+                    <button class="next">Next  >> </button>
                 </div>
             </div>
         </div>
@@ -91,5 +98,6 @@
 
     <script src="js/theme.js"></script>
     <script src="js/quotes.js"></script>
-    </body>
+</body>
+
 </html>
