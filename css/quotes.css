@@ -8,6 +8,7 @@
     transition: background var(--transition-duration);
     align-items: center;
     margin: 30px auto;
+    border: 1px solid #fff;
 }
 /* ------------Quotes End ---------------- */
 
