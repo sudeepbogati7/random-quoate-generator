@@ -141,30 +141,44 @@
         border-bottom: 1px solid #333;
         position: relative;
         z-index: 1;
-        margin: 0 0;
+        /* margin: 0 0; */
         /* background-color: red; */
     }
 
     .quote-header h1 {
         font-size: 16px;
         font-weight: 600;
-        text-align: center;
+        text-align: start;
+        /* background-color: red; */
     }
 
     .quote-header i {
-        display: none;
+        display: flex;
+        justify-content: flex-end;
+        text-align: end;
         cursor: pointer;
         font-size: 13px;
         color: var(--font-color);
+
     }
 
     .quote-actions {
         /* background-color: blue; */
-        padding: 0 auto;
-        top: 30%;
+        padding: 0;
+        top: 50%;
+        right: 0;
+        position: absolute;
+        z-index: 1;
         height: 30px;
         transform: translatey(-50%);
+
     }
+    .action-icon {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
 
 
     .quotes-wrapper .content {
