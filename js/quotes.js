@@ -1,5 +1,6 @@
 const quoteText = document.querySelector('.quote');
 
+const categories = document.querySelectorAll(".hidden-toggles__input");
 const previousBtn = document.querySelector(".previous");
 const nextBtn = document.querySelector(".next");
 const randBtn = document.querySelector('.random');
@@ -12,12 +13,30 @@ const incFontIcon = document.getElementById("increase-font-icon");
 const decFontIcon = document.getElementById("decrease-font-icon");
 let currentFontSize = 20;
 
-const url = 'https://api.quotable.io/random';
+const urlWithCategory = 'https://api.quotable.io/random';
 const options = {method: 'GET'};
 
 // declare and initialze global variables
 let currentQuotesIndex = null;
 let quotes = [];
+
+
+
+
+// categories selection 
+
+categories.forEach(category =>{
+    category.addEventListener("change", async()=>{
+        const selectedCategory = category.id;
+        const urlWithCategory = `https://api.quotable.io/random?tags=${selectedCategory}`;
+        const quote = await getQuotes(urlWithCategory, options);
+        currentQuotesIndex = null;
+        quotes =[];
+        quotes.push(quote);
+        displayQuotes(0);
+    })
+});
+
 
 async function getQuotes(url , options){
     try {
@@ -32,7 +51,7 @@ async function getQuotes(url , options){
 
 // fetch the quoets and display 
 async function getAndDisplayQuotes(index){
-    const quoteData = await getQuotes(url, options);
+    const quoteData = await getQuotes(urlWithCategory, options);
     quotes[index] = quoteData;
     displayQuotes(index);
     
@@ -49,7 +68,9 @@ function displayQuotes(index){
 randBtn.addEventListener("click", ()=>{
     copyText.innerText = "Copy";
     randBtn.innerText = "Loading quote...";
-    getQuotes(url, options).then(data => {
+    const selectedCategory = document.querySelector('input[name="coloration-level"]:checked').id;
+    const urlWithCategory = `https://api.quotable.io/random?tags=${selectedCategory}`;
+    getQuotes(urlWithCategory, options).then(data => {
         currentQuotesIndex = quotes.length;
         quotes.push(data);
         displayQuotes(currentQuotesIndex);
