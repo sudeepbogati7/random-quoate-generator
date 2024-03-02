@@ -1,5 +1,7 @@
 # random-quoate-generator
 
+**Visit from here :** https://sudeepbogati7.github.io/random-quoate-generator/
+
 A well responsive application which allows you to find the quotes with the selected category. 
 You can choose the category ,you are seeking the quotes about.
 
@@ -15,4 +17,5 @@ You can choose the category ,you are seeking the quotes about.
 *About the API*
 
 The application fetches the quote API from https://api.quotable.io/random
+
 
