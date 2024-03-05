@@ -18,4 +18,5 @@ You can choose the category ,you are seeking the quotes about.
 
 The application fetches the quote API from https://api.quotable.io/random
 
+Have a good day !
 
