@@ -20,6 +20,7 @@ You can choose the category ,you are seeking the quotes about.
 - Increase / decrease font size of the quote.
 - short and simple design
 
+
 *About the API*
 
 The application fetches the quote API from https://api.quotable.io/random
